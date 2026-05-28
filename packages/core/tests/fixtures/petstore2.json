@@ -45,6 +45,53 @@
           }
         }
       }
+    },
+    "/pets/{id}": {
+      "get": {
+        "summary": "Get a pet by ID",
+        "operationId": "getPetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "A single pet",
+            "schema": { "$ref": "#/definitions/Pet" }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a pet",
+        "operationId": "updatePet",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdatePet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pet updated"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -60,6 +107,13 @@
     "NewPet": {
       "type": "object",
       "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "tag": { "type": "string" }
+      }
+    },
+    "UpdatePet": {
+      "type": "object",
       "properties": {
         "name": { "type": "string" },
         "tag": { "type": "string" }
