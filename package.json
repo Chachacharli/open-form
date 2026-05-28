@@ -1,0 +1,19 @@
+{
+  "name": "open-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.34.1",
+  "devDependencies": {
+    "turbo": "^2.9.16"
+  },
+  "dependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.0.3"
+  }
+}
